@@ -1,0 +1,15 @@
+<article class="article-card">
+  <div class="votes">
+    <div class="score">{{ article.votes }}</div>
+    <div class="vote-buttons">
+      <button type="button" (click)="article.voteUp()">Up</button>
+      <button type="button" (click)="article.voteDown()">Down</button>
+    </div>
+  </div>
+  <div class="content">
+    <a class="title" [href]="article.link" target="_blank" rel="noopener">
+      {{ article.title }}
+    </a>
+    <div class="link">{{ article.link }}</div>
+  </div>
+</article>

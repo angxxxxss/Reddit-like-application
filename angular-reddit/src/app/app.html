@@ -1,0 +1,34 @@
+<div class="app">
+  <header class="app-header">
+    <h1>Reddit Like Application</h1>
+    <p class="subtitle">Condividi articoli e votali come in un mini Reddit.</p>
+  </header>
+
+  <section class="form-card">
+    <h2>Inserisci un nuovo articolo</h2>
+    <form>
+      <div class="form-row">
+        <label for="title">Titolo</label>
+        <input id="title" name="title" type="text" #newtitle />
+      </div>
+
+      <div class="form-row">
+        <label for="link">Link</label>
+        <input id="link" name="link" type="text" #newlink />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" (click)="addArticle(newtitle, newlink)">
+          Pubblica
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <section class="articles-list">
+    <app-article
+      *ngFor="let article of sortedArticles()"
+      [article]="article"
+    ></app-article>
+  </section>
+</div>
